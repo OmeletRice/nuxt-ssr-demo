@@ -1,10 +1,35 @@
 <template>
-  <div>
-    <nuxt/>
+  <div class="app">
+    <div class="app-header">
+      <header-view />
+    </div>
+    <div class="app-main">
+      <nuxt/>
+    </div>
+    <div class="app-footer">
+      <footer-view />
+    </div>
   </div>
 </template>
 
-<style>
+<script>
+import {
+  Header,
+  Footer
+} from '~/components/layout'
+export default {
+  name: 'app',
+
+  components: {
+    HeaderView: Header,
+    FooterView: Footer
+  }
+}
+</script>
+
+<style lang="scss">
+@import '~assets/scss/common/var.scss';
+
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
@@ -21,32 +46,16 @@ html {
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+.container,
+.page-container {
+  width: 1140px;
+  padding: 0;
+  margin: 0 auto;
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+.page-container {
+  margin-top: $--header-height;
+  min-height: 50vh;
 }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
 </style>
