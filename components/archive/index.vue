@@ -1,7 +1,11 @@
 <template>
   <div class="articles">
     <div class="articles__list">
-      <Item v-for="i in 10" :key="i"/>
+      <Item
+        v-for="art in articles"
+        :key="art.id.toString()"
+        :article="art"
+      />
     </div>
   </div>
 </template>
@@ -10,6 +14,10 @@
 import Item from './item'
 export default {
   name: 'articles',
+
+  props: {
+    articles: Array
+  },
 
   components: {
     Item

@@ -23,6 +23,7 @@ export default {
   height: $--header-height;
   line-height: $--header-height;
   background-color: $--color-primary-light-1;
+  z-index: 150;
 
   .nav-bar {
     background-color: #daffed21

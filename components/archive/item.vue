@@ -16,7 +16,10 @@
           <!-- </nuxt-link> -->
         </div>
         <div class="item-info__tags">
-          
+          <span v-for="(tag, index) in article.tags"
+            :key="index">
+            {{ tag }}
+          </span>
         </div>
       </div>
 
@@ -31,16 +34,26 @@
         </div>
         <div class="item-body__meta">
           <span class="meta-date">
-            2018.04.08
+            <nuxt-link
+              :to="`/date/${article.createdAt}`"
+            >{{ article.createdAt }}</nuxt-link>
           </span>
-          <span class="meta-views">200</span>
-          <span class="meta-comment">10</span>
-          <span class="meta-likes">0</span>
+          <span class="meta-views">
+            {{article.views}}
+          </span>
+          <span class="meta-comment">
+            {{article.comment}}
+          </span>
+          <span class="meta-likes">
+            {{article.likes}}
+          </span>
           <span class="meta-categories">
             <nuxt-link
               v-if="article.categories && article.categories.length"
               :to="`/category/${article.slug}`"
-            >{{article.categories}}</nuxt-link>
+              v-for="(cate, index) in article.categories"
+              :key="index"
+            >{{cate}}</nuxt-link>
             <span v-else>未分类</span>
           </span>
         </div>
@@ -80,7 +93,7 @@ $--article-item-title-height: 50px;
   height: $--article-item-height;
 
   & + .articles__list-item {
-    margin-bottom: 20px;
+    margin-top: 20px;
   }
 }
 
@@ -166,7 +179,12 @@ $--article-item-title-height: 50px;
 
 .item-body__meta {
 
-  & .meta-date {}
+  & .meta-date {
+    
+    & a {
+      text-decoration: none;
+    }
+  }
 
   & .meta-views {
     margin-left: 5px;

@@ -8,39 +8,33 @@
         <el-col
           :span="18"
         >
-          <Articles />
+          <Articles :articles="articles" />
         </el-col>
       </el-row>
-      <div class="count">
-        {{ appCount }}
-      </div>
+      <!-- <div class="count">
+        {{ articles }}
+      </div> -->
     </div>
   </section>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
 import Articles from '~/components/archive/index.vue'
 import { mapState } from 'vuex'
 
 export default {
   components: {
-    AppLogo,
     Articles
   },
 
-  asyncData ({store, params}) {
-    return store.dispatch('getApp', params)
-      .then(res => {
-        console.log(res)
-        return res
-      })
+  asyncData ({ store, params }) {
+    return store.dispatch('archives/getArticles')
   },
 
   computed: {
     ...mapState({
-      appCount: state => {
-        return state.appCount
+      articles: state => {
+        return state.archives.articles
       }
     })
   }

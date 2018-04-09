@@ -1,15 +1,16 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import state from './state'
-import * as mutations from './mutations'
-import * as actions from './actions'
+import archives from './modules/archives'
 
 Vue.use(Vuex)
 
+const debug = process.env.NODE_ENV !== 'production'
+
 const store = () => new Vuex.Store({
-  state,
-  mutations,
-  actions
+  modules: {
+    archives
+  },
+  strict: debug
 })
 
 export default store

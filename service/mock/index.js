@@ -17,4 +17,8 @@ export function mock (instance, options) {
   mock
     .onGet('/app')
     .reply(200, fixture('app'))
+
+  mock
+    .onGet('/articles')
+    .reply(200, fixture('articles'))
 }
