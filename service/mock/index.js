@@ -21,4 +21,8 @@ export function mock (instance, options) {
   mock
     .onGet('/articles')
     .reply(200, fixture('articles'))
+
+  mock
+    .onGet(/\/articles\/.+/)
+    .reply(200, fixture('articles/1'))
 }

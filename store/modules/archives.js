@@ -3,7 +3,10 @@ import api from '~/service'
 const state = () => {
   return {
     count: 0,
-    articles: []
+    articles: [],
+    detail: {
+      data: null
+    }
   }
 }
 
@@ -17,6 +20,10 @@ const mutations = {
   fetchArticles (state, params) {
     state.articles = params.data
     state.count = params.data.length
+  },
+
+  fetchArticleDetail (state, params) {
+    state.detail.data = params.data
   }
 }
 
@@ -31,6 +38,11 @@ const actions = {
     if (allArticles.data && allArticles.data.length) {
       commit('fetchArticles', { data: allArticles.data })
     }
+  },
+
+  async getArticleDetail ({ commit }, params) {
+    const articleDetail = await api.articles.fetch(params)
+    commit('fetchArticleDetail', articleDetail)
   }
 }
 

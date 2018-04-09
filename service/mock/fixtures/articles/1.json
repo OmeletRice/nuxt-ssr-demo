@@ -1,0 +1,18 @@
+{
+  "code": 1,
+  "data": {
+    "id": "1",
+    "title": "Article 1",
+    "author": "Kagen",
+    "slug": "slug",
+    "categories": ["preson all", "none"],
+    "tags": ["js", "webpack"],
+    "abstract": "abstract",
+    "body": "<h1>This is context body H1</h1><p>this is context body P.</p>",
+    "createdAt": "2018.04.09",
+    "updatedAt": "2018.04.10",
+    "views": "200",
+    "comment": "10",
+    "likes": "5"
+  }
+}
