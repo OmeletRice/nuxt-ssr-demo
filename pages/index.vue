@@ -4,11 +4,9 @@
       <el-row :gutter="20">
         <el-col class="aside" :span="6">
           <person-card />
-          <!-- <nav /> -->
+          <aside-nav />
         </el-col>
-        <el-col
-          :span="18"
-        >
+        <el-col :span="18">
           <nuxt-child />
         </el-col>
       </el-row>
@@ -18,17 +16,19 @@
 
 <script>
 import PersonCard from '~/components/person-card/index.vue'
+import AsideNav from '~/components/layout/nav.vue'
 
 export default {
   components: {
-    PersonCard
+    PersonCard,
+    AsideNav
   }
 }
 </script>
 
 <style scoped>
 .page-container {
-  background-color: #daffed21
+  /* background-color: #daffed21 */
 }
 
 .aside {

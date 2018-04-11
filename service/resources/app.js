@@ -6,6 +6,12 @@ export default function (instance) {
       return instance
         .get(`${path}`)
         .then(response => response.data)
+    },
+
+    fetchCarousel () {
+      return instance
+        .get(`${path}/carousel`)
+        .then(res => res.data)
     }
   }
 }

@@ -1,3 +1,15 @@
 {
-  "app": "app.json"
+  "app": "app.json",
+  "carousel": [
+    {
+      "link": "/articles",
+      "imgSrc": "https://image.uisdc.com/wp-content/uploads/2018/04/uisdc-bbanner-0409.jpg",
+      "alt": "Link to articles"
+    },
+    {
+      "link": "/project",
+      "imgSrc": "https://image.uisdc.com/wp-content/uploads/2018/03/uisdc-bbanner-330.jpg",
+      "alt": "Link to project"
+    }
+  ]
 }

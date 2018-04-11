@@ -19,6 +19,10 @@ export function mock (instance, options) {
     .reply(200, fixture('app'))
 
   mock
+    .onGet('/app/carousel')
+    .reply(200, fixture('app').carousel)
+
+  mock
     .onGet('/articles')
     .reply(200, fixture('articles'))
 

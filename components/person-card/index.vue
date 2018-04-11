@@ -40,7 +40,7 @@ $--card-portrait-size: 120px;
     width: $--card-portrait-size;
     border-radius: $--border-radius-circle;
     background-color: $--color-primary-light-1;
-    margin: 30px auto 10px auto;
+    margin: 30px auto 30px auto;
   }
 
   &__name {
@@ -55,6 +55,7 @@ $--card-portrait-size: 120px;
 
   &__resume {
     text-align: left;
+    margin-bottom: 10px;
   }
 }
 </style>

@@ -25,6 +25,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.articles__list {
+  margin-bottom: 20px;
+}
 </style>

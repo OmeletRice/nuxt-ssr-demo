@@ -103,6 +103,7 @@ $--article-item-title-height: 50px;
   border-radius: $--border-radius-base;
   transition: $--all-transition;
   box-shadow: 0px;
+  border: $--border-default;
 
   display: flex;
   overflow: hidden;
