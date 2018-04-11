@@ -41,8 +41,8 @@
           <span class="meta-views">
             {{article.views}}
           </span>
-          <span class="meta-comment">
-            {{article.comment}}
+          <span class="meta-comments">
+            {{article.comments}}
           </span>
           <span class="meta-likes">
             {{article.likes}}
@@ -191,7 +191,7 @@ $--article-item-title-height: 50px;
     margin-left: 5px;
   }
 
-  & .meta-comment {
+  & .meta-comments {
     margin-left: 5px;    
   }
 
