@@ -13,15 +13,21 @@ export function mock (instance, options) {
 
   const mock = new MockAdapter(instance, _options)
 
-  // assets
+  // app
   mock
     .onGet('/app')
     .reply(200, fixture('app'))
 
   mock
+    .onGet('/app/master')
+    .reply(200, fixture('app').master)
+
+  mock
     .onGet('/app/carousel')
     .reply(200, fixture('app').carousel)
 
+
+  // articles
   mock
     .onGet('/articles')
     .reply(200, fixture('articles'))

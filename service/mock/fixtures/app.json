@@ -1,5 +1,21 @@
 {
   "app": "app.json",
+  "master": {
+    "profileSrc": "https://avatars1.githubusercontent.com/u/6304465?s=460&v=4",
+    "name": "Omelet",
+    "enName": "Kangschampagne",
+    "resume": "Front-end Developer & UX/UI designer.",
+    "social": {
+      "weixin": {
+        "id": "kangschampange",
+        "link": ""
+      },
+      "github": {
+        "id": "kangschampange",
+        "link": "https://github.com/kangschampagne"
+      }
+    }
+  },
   "carousel": [
     {
       "link": "/articles",

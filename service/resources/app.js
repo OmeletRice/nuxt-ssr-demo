@@ -8,6 +8,12 @@ export default function (instance) {
         .then(response => response.data)
     },
 
+    fetchMaster () {
+      return instance
+        .get(`${path}/master`)
+        .then(res => res.data)
+    },
+
     fetchCarousel () {
       return instance
         .get(`${path}/carousel`)

@@ -1,16 +1,23 @@
 <template>
-  <Articles :articles="articles" />
+  <div class="artciles-wrap">
+    <div class="articles-bar">
+      <filter-bar />
+    </div>
+    <Articles :articles="articles" />
+  </div>
 </template>
 
 <script>
 import Articles from '~/components/archive/index.vue'
+import FilterBar from '~/components/filter-bar/index.vue'
 import { mapState } from 'vuex'
 
 export default {
   name: 'articles',
 
   components: {
-    Articles
+    Articles,
+    FilterBar
   },
 
   asyncData ({ store, params }) {
@@ -27,6 +34,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '~assets/scss/common/var.scss';
 
+.articles-bar {
+  margin: 20px 10px;
+  box-shadow: $--box-shadow-light;
+}
 </style>

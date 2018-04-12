@@ -1,11 +1,13 @@
 <template>
   <div class="person-card">
     <div class="card">
-      <div class="card__header"></div>
-      <p class="card__name">某某某</p>
-      <p class="card__name-en">KangKangKang</p>
+      <div class="card__profile">
+        <img :src="info.profileSrc" alt="" />
+      </div>
+      <p class="card__name">{{ info.name }}</p>
+      <p class="card__name-en">{{ info.enName }}</p>
       <p class="card__resume">
-        爱好UX/UI设计，注重界面交互，Web前端开发者
+        {{ info.resume }}
       </p>
     </div>
   </div>
@@ -13,7 +15,21 @@
 
 <script>
 export default {
-  name: 'person-card'
+  name: 'person-card',
+
+  props: {
+    info: {
+      type: Object,
+      default () {
+        return {
+          profileSrc: '',
+          name: '',
+          enName: '',
+          resume: ''
+        }
+      }
+    }
+  }
 }
 </script>
 
@@ -35,12 +51,18 @@ $--card-portrait-size: 120px;
   overflow: hidden;
   padding: 20px;
 
-  &__header {
+  &__profile {
     height: $--card-portrait-size;
     width: $--card-portrait-size;
     border-radius: $--border-radius-circle;
     background-color: $--color-primary-light-1;
     margin: 30px auto 30px auto;
+    overflow: hidden;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &__name {
