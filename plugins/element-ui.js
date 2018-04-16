@@ -23,3 +23,4 @@ export default () => {
   // Vue.use(Option)
   Vue.use(Element)
 }
+
